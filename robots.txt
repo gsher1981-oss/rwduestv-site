@@ -1,0 +1,7 @@
+# robots.txt for rwduestv.com
+# Allow all crawlers, including AI search bots (good for discovery)
+
+User-agent: *
+Allow: /
+
+Sitemap: https://rwduestv.com/sitemap.xml

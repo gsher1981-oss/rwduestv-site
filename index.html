@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raiding With Dues | Real F2P Raid Strategy</title>
+<meta name="description" content="Real Raid: Shadow Legends strategy for F2P and endgame players. No clickbait. No pay-to-win advice. Honest guides from a player who's been there.">
+<meta property="og:title" content="Raiding With Dues — Real Raid Strategy">
+<meta property="og:description" content="F2P strategy, clan guides, and honest Raid: Shadow Legends content. No pay-to-win advice.">
+<meta property="og:url" content="https://rwduestv.com">
+<link rel="canonical" href="https://rwduestv.com/">
+<style>
+/* ═══════════════════════════════════════════════════
+   RAIDING WITH DUES — Shared Site Stylesheet
+   Black #000000 · Crimson #DC143C · Gold #D4AF37
+   ═══════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ── TOKENS ── */
+:root {
+  --black:          #000000;
+  --surface1:       #0a0000;
+  --surface2:       #110000;
+  --surface3:       #1a0000;
+  --crimson:        #DC143C;
+  --dk-crimson:     #A41720;
+  --gold:           #D4AF37;
+  --soft-gold:      #D3AF37;
+  --white:          #F5F0E8;
+  --muted:          #888888;
+  --border:         rgba(212,175,55,0.2);
+  --border-strong:  rgba(212,175,55,0.5);
+  --radius:         8px;
+  --radius-lg:      12px;
+}
+
+/* ── RESET ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html  { scroll-behavior: smooth; }
+body  {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+a   { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+ul  { list-style: none; }
+
+/* ── TYPOGRAPHY ── */
+.display {
+  font-family: 'Cinzel', serif;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  color: var(--gold);
+}
+h1, h2, h3 { font-weight: 500; }
+
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.section-label::before,
+.section-label::after {
+  content: '';
+  height: 1px;
+  width: 32px;
+  background: var(--crimson);
+  opacity: 0.5;
+}
+
+/* ── LAYOUT ── */
+.container   { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+section      { padding: 80px 0; }
+.divider     {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(0,0,0,0.94);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+.nav-inner {
+  max-width: 1140px; margin: 0 auto; padding: 0 24px;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px;
+}
+.nav-brand {
+  font-family: 'Cinzel', serif;
+  font-weight: 900; font-size: 18px;
+  color: var(--gold); letter-spacing: 0.06em;
+  display: flex; align-items: center; gap: 8px;
+  flex-shrink: 0;
+}
+.nav-brand span { color: var(--crimson); }
+.nav-links {
+  display: flex; align-items: center; gap: 28px;
+}
+.nav-links a {
+  font-size: 12px; font-weight: 500;
+  letter-spacing: 0.07em; text-transform: uppercase;
+  color: rgba(245,240,232,0.65);
+  transition: color 0.2s;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--gold); }
+.nav-cta {
+  background: var(--crimson) !important;
+  color: var(--gold) !important;
+  padding: 8px 18px !important;
+  border-radius: var(--radius) !important;
+  border: 1px solid var(--dk-crimson) !important;
+  font-weight: 600 !important;
+  transition: background 0.2s !important;
+}
+.nav-cta:hover { background: var(--dk-crimson) !important; }
+
+/* ── PAGE HERO (inner pages) ── */
+.page-hero {
+  padding: 140px 0 72px;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 55% 60% at 80% 40%, rgba(220,20,60,0.07) 0%, transparent 65%),
+    radial-gradient(ellipse 35% 50% at 10% 90%, rgba(164,23,32,0.05) 0%, transparent 55%),
+    var(--black);
+}
+.page-hero-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(212,175,55,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,175,55,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.page-hero-inner { position: relative; z-index: 1; }
+.page-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--crimson);
+  background: rgba(220,20,60,0.08);
+  border: 1px solid rgba(220,20,60,0.25);
+  border-radius: 20px;
+  padding: 5px 14px;
+  margin-bottom: 20px;
+}
+.page-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 900;
+  font-size: clamp(32px, 5vw, 56px);
+  color: var(--gold);
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+.page-subtitle {
+  font-size: 17px;
+  color: rgba(245,240,232,0.6);
+  max-width: 580px;
+  line-height: 1.65;
+}
+
+/* ── BUTTONS ── */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--crimson);
+  color: var(--gold);
+  border: 1px solid var(--dk-crimson);
+  padding: 13px 26px;
+  border-radius: var(--radius);
+  font-weight: 600; font-size: 14px;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, transform 0.15s;
+  cursor: pointer;
+}
+.btn-primary:hover { background: var(--dk-crimson); transform: translateY(-1px); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--border-strong);
+  padding: 13px 26px;
+  border-radius: var(--radius);
+  font-weight: 500; font-size: 14px;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, transform 0.15s;
+  cursor: pointer;
+}
+.btn-secondary:hover { background: rgba(212,175,55,0.07); transform: translateY(-1px); }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: transparent;
+  color: var(--crimson);
+  border: none; padding: 0;
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.btn-ghost::after { content: '→'; }
+.btn-ghost:hover { color: var(--gold); }
+
+/* ── CARDS ── */
+.card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.card:hover { border-color: var(--border-strong); transform: translateY(-2px); }
+.card-header {
+  background: var(--dk-crimson);
+  padding: 14px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.card-title  { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 700; color: var(--gold); }
+.card-badge  {
+  font-size: 10px; background: rgba(0,0,0,0.3);
+  color: var(--gold); border-radius: 20px;
+  padding: 3px 10px; letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.card-body   { padding: 22px; }
+
+/* ── PILL TAGS ── */
+.tag {
+  display: inline-flex; align-items: center;
+  font-size: 11px; font-weight: 500;
+  padding: 4px 12px; border-radius: 20px;
+  letter-spacing: 0.05em;
+}
+.tag-crimson {
+  background: rgba(220,20,60,0.12);
+  color: var(--crimson);
+  border: 1px solid rgba(220,20,60,0.3);
+}
+.tag-gold {
+  background: rgba(212,175,55,0.1);
+  color: var(--gold);
+  border: 1px solid rgba(212,175,55,0.3);
+}
+.tag-muted {
+  background: rgba(255,255,255,0.05);
+  color: var(--muted);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ── STAT BLOCKS ── */
+.stat-grid {
+  display: flex; gap: 40px;
+  border-top: 1px solid var(--border);
+  padding-top: 28px; margin-top: 28px;
+  flex-wrap: wrap;
+}
+.stat-num   { font-family: 'Cinzel', serif; font-size: 28px; font-weight: 700; color: var(--gold); }
+.stat-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
+
+/* ── LINK CARDS ── */
+.link-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  display: flex; align-items: center; gap: 14px;
+  transition: border-color 0.2s, transform 0.15s;
+}
+.link-card:hover { border-color: var(--border-strong); transform: translateY(-2px); }
+.link-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.link-icon-crimson { background: rgba(220,20,60,0.12); border: 1px solid rgba(220,20,60,0.25); }
+.link-icon-gold    { background: rgba(212,175,55,0.1);  border: 1px solid rgba(212,175,55,0.25); }
+.link-name { font-size: 14px; font-weight: 600; color: var(--gold); }
+.link-url  { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+/* ── AFFILIATE BAR ── */
+.affiliate-bar {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 26px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px; flex-wrap: wrap;
+}
+.affiliate-tag  { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--crimson); margin-bottom: 4px; font-weight: 600; }
+.affiliate-name { font-family: 'Cinzel', serif; font-size: 20px; color: var(--gold); font-weight: 700; }
+.affiliate-desc { font-size: 13px; color: rgba(245,240,232,0.6); margin-top: 4px; }
+.code-box {
+  background: var(--surface3);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 10px 20px; text-align: center;
+}
+.code-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+.code-value { font-family: 'Cinzel', serif; font-size: 18px; color: var(--gold); font-weight: 700; letter-spacing: 0.06em; margin-top: 2px; }
+
+/* ── TABLE ── */
+.rwd-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 14px;
+}
+.rwd-table th {
+  text-align: left; padding: 10px 16px;
+  font-size: 11px; font-weight: 600;
+  color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase;
+  border-bottom: 1px solid var(--border-strong);
+  background: var(--surface3);
+}
+.rwd-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  color: rgba(245,240,232,0.8);
+  vertical-align: middle;
+}
+.rwd-table tr:last-child td { border-bottom: none; }
+.rwd-table tr:hover td { background: rgba(212,175,55,0.03); }
+
+/* ── NOTICE / CALLOUT ── */
+.callout {
+  border-left: 3px solid var(--crimson);
+  background: rgba(220,20,60,0.06);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 16px 20px;
+  font-size: 14px;
+  color: rgba(245,240,232,0.75);
+  line-height: 1.6;
+}
+.callout strong { color: var(--gold); }
+.callout-gold {
+  border-left-color: var(--gold);
+  background: rgba(212,175,55,0.05);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--surface1);
+  border-top: 1px solid var(--border);
+  padding: 52px 0 28px;
+}
+.footer-top {
+  display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  gap: 40px; margin-bottom: 40px;
+}
+.footer-brand-name { font-family: 'Cinzel', serif; font-size: 18px; color: var(--gold); font-weight: 900; margin-bottom: 8px; }
+.footer-brand-tag  { font-size: 13px; color: rgba(245,240,232,0.45); line-height: 1.7; }
+.footer-col-title  { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--crimson); margin-bottom: 14px; }
+.footer-links      { display: flex; flex-direction: column; gap: 9px; }
+.footer-links a    { font-size: 13px; color: rgba(245,240,232,0.5); transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold); }
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 8px;
+}
+.footer-copy    { font-size: 12px; color: var(--muted); }
+.footer-tagline { font-size: 12px; color: var(--muted); }
+.footer-tagline span { color: var(--gold); }
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .nav-links  { display: none; }
+}
+@media (max-width: 640px) {
+  section           { padding: 56px 0; }
+  .page-hero        { padding: 120px 0 56px; }
+  .affiliate-bar    { flex-direction: column; text-align: center; }
+  .stat-grid        { gap: 24px; }
+  .footer-top       { grid-template-columns: 1fr; }
+}
+
+</style>
+<style>
+/* ── HOME-ONLY STYLES ── */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding-top: 64px;
+  position: relative; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 70% 50%, rgba(220,20,60,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 20% 80%, rgba(164,23,32,0.06) 0%, transparent 60%),
+    var(--black);
+}
+.hero-bg::after {
+  content:''; position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(212,175,55,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,175,55,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-inner {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1fr 400px;
+  gap: 60px; align-items: center;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--crimson);
+  background: rgba(220,20,60,0.08); border: 1px solid rgba(220,20,60,0.25);
+  border-radius: 20px; padding: 5px 14px; margin-bottom: 22px;
+}
+.hero-title {
+  font-family: 'Cinzel', serif; font-weight: 900;
+  font-size: clamp(38px,5vw,64px); line-height: 1.05;
+  color: var(--gold); margin-bottom: 14px;
+}
+.hero-title .line2 { color: var(--white); }
+.hero-subtitle {
+  font-size: 18px; color: rgba(245,240,232,0.6);
+  margin-bottom: 34px; max-width: 520px; line-height: 1.65;
+}
+.hero-subtitle strong { color: var(--gold); font-weight: 500; }
+.hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 44px; }
+.hero-card {
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: 0 0 60px rgba(220,20,60,0.07);
+}
+.hero-card-banner {
+  background: var(--dk-crimson); padding: 14px 18px;
+  display: flex; align-items: center; gap: 12px;
+}
+.hero-card-icon {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--black); border: 2px solid var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.hero-card-title { font-family:'Cinzel',serif; font-size:13px; font-weight:700; color:var(--gold); }
+.hero-card-sub   { font-size:11px; color:rgba(212,175,55,0.65); margin-top:2px; }
+.hero-card-body  { padding: 18px; }
+.video-thumb {
+  width:100%; aspect-ratio:16/9;
+  background: var(--surface3); border-radius: var(--radius);
+  border: 1px solid var(--border);
+  display:flex; align-items:center; justify-content:center;
+  position:relative; overflow:hidden; margin-bottom:12px;
+}
+.video-thumb::before {
+  content:''; position:absolute; inset:0;
+  background: linear-gradient(135deg, rgba(220,20,60,0.15) 0%, transparent 60%);
+}
+.play-btn {
+  width:50px; height:50px; border-radius:50%;
+  background: var(--crimson); border: 2px solid var(--gold);
+  display:flex; align-items:center; justify-content:center;
+  position:relative; z-index:1; font-size:18px;
+  box-shadow: 0 0 24px rgba(220,20,60,0.4);
+}
+.video-meta { display:flex; justify-content:space-between; align-items:flex-start; gap:8px; }
+.video-title { font-size:13px; font-weight:500; color:var(--white); }
+.social-strip {
+  border-top: 1px solid var(--border); padding: 12px 18px;
+  display:flex; gap:14px; align-items:center; flex-wrap:wrap;
+}
+.social-link { font-size:11px; color:var(--muted); transition:color 0.2s; }
+.social-link:hover { color:var(--gold); }
+.pillars-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:44px; }
+.pillar {
+  background:var(--surface2); border:1px solid var(--border);
+  border-radius:var(--radius-lg); padding:26px 22px;
+  border-top:2px solid var(--dk-crimson);
+  transition:border-color 0.2s, transform 0.2s;
+}
+.pillar:hover { border-top-color:var(--crimson); transform:translateY(-3px); }
+.pillar-icon  { font-size:26px; margin-bottom:14px; display:block; }
+.pillar-title { font-family:'Cinzel',serif; font-size:14px; font-weight:700; color:var(--gold); margin-bottom:8px; }
+.pillar-text  { font-size:14px; color:rgba(245,240,232,0.58); line-height:1.6; }
+.series-grid  { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:44px; }
+.raid-framework {
+  background:var(--surface1); border:1px solid var(--border);
+  border-radius:14px; padding:44px;
+  margin-top:44px; position:relative; overflow:hidden;
+}
+.raid-framework::before {
+  content:''; position:absolute; left:0; top:0; bottom:0;
+  width:4px; background:var(--crimson);
+}
+.framework-grid {
+  display:grid; grid-template-columns:repeat(4,1fr);
+  border:1px solid var(--border); border-radius:var(--radius);
+  overflow:hidden; margin-top:32px;
+}
+.fw-step { padding:24px 18px; border-right:1px solid var(--border); text-align:center; }
+.fw-step:last-child { border-right:none; }
+.fw-letter { font-family:'Cinzel',serif; font-size:44px; font-weight:900; color:var(--crimson); line-height:1; margin-bottom:4px; }
+.fw-word   { font-size:11px; font-weight:600; color:var(--gold); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:8px; }
+.fw-desc   { font-size:12px; color:rgba(245,240,232,0.5); line-height:1.5; }
+.links-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:44px; }
+@media(max-width:900px){
+  .hero-inner   { grid-template-columns:1fr; }
+  .hero-card    { display:none; }
+  .pillars-grid { grid-template-columns:1fr; }
+  .series-grid  { grid-template-columns:1fr; }
+  .framework-grid { grid-template-columns:1fr 1fr; }
+  .links-grid   { grid-template-columns:1fr 1fr; }
+}
+@media(max-width:600px){
+  .framework-grid { grid-template-columns:1fr 1fr; }
+  .links-grid     { grid-template-columns:1fr; }
+  .raid-framework { padding:26px 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">⚔ RWD<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="/guides">Guides</a></li>
+      <li><a href="/clan">Clan</a></li>
+      <li><a href="/codes">Free Codes</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Apply</a></li>
+      <li><a href="https://youtube.com/@RWDues" target="_blank" rel="noopener" class="nav-cta">▶ Watch</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">⚔ Real Raid Strategy</div>
+        <h1 class="hero-title">Raiding With Dues — F2P Raid: Shadow Legends Strategy</h1>
+        <p class="hero-subtitle"><strong>No pay-to-win advice. No clickbait.</strong> Honest F2P strategy and endgame guides for real Raid: Shadow Legends players — beginner to endgame.</p>
+        <div class="hero-buttons">
+          <a href="https://youtube.com/@RWDues" target="_blank" rel="noopener" class="btn-primary">▶ Watch on YouTube</a>
+          <a href="https://discord.gg/WJ3kC26Qg" target="_blank" rel="noopener" class="btn-secondary">Join the Discord</a>
+        </div>
+        <div class="stat-grid">
+          <div><div class="stat-num">F2P</div><div class="stat-label">Friendly Guides</div></div>
+          <div><div class="stat-num">14</div><div class="stat-label">UNG Clans</div></div>
+          <div><div class="stat-num">2020</div><div class="stat-label">Playing Since</div></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-banner">
+          <div class="hero-card-icon">⚔</div>
+          <div>
+            <div class="hero-card-title">Raiding With Dues</div>
+            <div class="hero-card-sub">@RWDues · New videos every week</div>
+          </div>
+        </div>
+        <div class="hero-card-body">
+          <a href="https://youtu.be/RH7Uhhi5P20" target="_blank" rel="noopener">
+            <div class="video-thumb"><div class="play-btn">▶</div></div>
+          </a>
+          <div class="video-meta">
+            <div class="video-title">Stage 25 All-Rare Phantom Shogun</div>
+            <span class="tag tag-crimson">F2P Build</span>
+          </div>
+          <p style="font-size:12px;color:var(--muted);margin-top:6px;">Gnarlhorn · Paragon · Reliquary Tender · 2× Coldheart</p>
+        </div>
+        <div class="social-strip">
+          <a href="https://youtube.com/@RWDues" target="_blank" rel="noopener" class="social-link">▶ YouTube</a>
+          <a href="https://discord.gg/WJ3kC26Qg" target="_blank" rel="noopener" class="social-link">Discord</a>
+          <a href="https://instagram.com/rwd_raid" target="_blank" rel="noopener" class="social-link">Instagram</a>
+          <a href="https://tiktok.com/@rwdues" target="_blank" rel="noopener" class="social-link">TikTok</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- INTRO -->
+<section style="padding: 60px 0 20px;">
+  <div class="container">
+    <p style="color:rgba(245,240,232,0.75);max-width:680px;line-height:1.8;font-size:16px;margin-bottom:20px;">Raiding With Dues is a Raid: Shadow Legends YouTube channel built around one idea: honest strategy that works for everyone, not just players with deep pockets. Every guide comes from an active F2P account and a separate endgame account — so whether you're figuring out your first champion build or pushing Hydra Clan Boss, the advice here is grounded in real gameplay.</p>
+    <p style="color:rgba(245,240,232,0.75);max-width:680px;line-height:1.8;font-size:16px;margin-bottom:20px;">The channel launched in 2020 and covers the full progression journey — beginner gear decisions, F2P account building from scratch, endgame content like Clan Boss and Dungeons, fusion guides, and free reward codes. The signature R.A.I.D. Gear Formula gives players a four-step system for making every gear decision with confidence instead of copying tier lists and hoping for the best.</p>
+    <p style="color:rgba(245,240,232,0.75);max-width:680px;line-height:1.8;font-size:16px;">Beyond the videos, Dues is part of the UNG Cluster — a 14-clan community run by fellow content creator Boozor. Free F2P checklists and cheat sheets are available on Ko-fi, and the Discord is open to anyone who wants to talk strategy, get an account review, or just find a good clan.</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PILLARS -->
+<section>
+  <div class="container">
+    <div class="section-label reveal">What You'll Find Here</div>
+    <h2 class="display reveal" style="font-size:clamp(26px,4vw,40px);">Built for Real Players</h2>
+    <p style="color:rgba(245,240,232,0.58);margin-top:10px;max-width:540px;" class="reveal">Whether you're F2P, mid-game, or endgame — every guide is strategy you can actually use.</p>
+    <div class="pillars-grid">
+      <div class="pillar reveal"><span class="pillar-icon">🗡</span><div class="pillar-title">F2P Strategy</div><p class="pillar-text">Clear paths through the game without spending. Real team-building from an active F2P account.</p></div>
+      <div class="pillar reveal"><span class="pillar-icon">🛡</span><div class="pillar-title">Endgame Guides</div><p class="pillar-text">Deep dives from DuesXMac — Clan Boss, Dungeons, Hydra, and beyond. No fluff.</p></div>
+      <div class="pillar reveal"><span class="pillar-icon">⚔</span><div class="pillar-title">Community</div><p class="pillar-text">Part of the 14-clan UNG Cluster run by Boozor. A home for Raid players at every level.</p></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CHANNEL IDENTITY BANNER -->
+<section style="padding: 60px 0;">
+  <div class="container">
+    <div class="section-label reveal">The Channel</div>
+    <h2 class="display reveal" style="font-size:clamp(26px,4vw,40px);margin-bottom:28px;">Real Raid Strategy. Every Level.</h2>
+
+    <!-- YouTube Channel Banner -->
+    <a href="https://youtube.com/@RWDues" target="_blank" rel="noopener" class="reveal" style="display:block;margin-bottom:20px;">
+      <div style="
+        border-radius:14px;overflow:hidden;
+        border:1px solid rgba(212,175,55,0.5);
+        box-shadow:0 0 60px rgba(220,20,60,0.15);
+        transition:box-shadow 0.3s,transform 0.3s;
+      "
+      onmouseover="this.style.boxShadow='0 0 80px rgba(220,20,60,0.3)';this.style.transform='translateY(-3px)'"
+      onmouseout="this.style.boxShadow='0 0 60px rgba(220,20,60,0.15)';this.style.transform='none'"
+      >
+        <img
+          src="rwd_youtube_banner.webp"
+          alt="Raiding With Dues — YouTube Channel Banner"
+          width="1200" height="675"
+          style="width:100%;display:block;border-radius:13px;"
+          loading="lazy"
+        >
+      </div>
+    </a>
+
+    <!-- Armored King / Channel Identity -->
+    <a href="https://youtube.com/@RWDues" target="_blank" rel="noopener" class="reveal" style="display:block;">
+      <div style="
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid rgba(212,175,55,0.4);
+        box-shadow: 0 0 60px rgba(220,20,60,0.15);
+        transition: box-shadow 0.3s, transform 0.3s;
+        position: relative;
+      "
+      onmouseover="this.style.boxShadow='0 0 80px rgba(220,20,60,0.3)';this.style.transform='translateY(-3px)'"
+      onmouseout="this.style.boxShadow='0 0 60px rgba(220,20,60,0.15)';this.style.transform='none'"
+      >
+        <img
+          src="rwd_hero_banner.webp"
+          alt="Raiding With Dues — Real Raid Strategy, No Pay-to-Win Advice. Early Game, Mid Game, Late Game."
+          width="1100" height="619"
+          style="width:100%;display:block;border-radius:13px;"
+          loading="lazy"
+        >
+        <div style="
+          position:absolute;
+          bottom:0;left:0;right:0;
+          padding:16px 24px;
+          background:linear-gradient(transparent, rgba(0,0,0,0.75));
+          display:flex;align-items:center;justify-content:space-between;
+          flex-wrap:wrap;gap:8px;
+          border-radius:0 0 13px 13px;
+        ">
+          <span style="font-size:13px;color:rgba(212,175,55,0.85);">▶ Watch on YouTube · youtube.com/@RWDues</span>
+          <span style="font-size:11px;color:rgba(245,240,232,0.5);">Click to visit the channel</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SERIES -->
+<section>
+  <div class="container">
+    <div class="section-label reveal">Content Series</div>
+    <h2 class="display reveal" style="font-size:clamp(26px,4vw,40px);">Find Your Level</h2>
+    <div class="series-grid">
+      <div class="card reveal">
+        <div class="card-header"><div class="card-title">F2P Files</div><div class="card-badge">Beginner → Mid</div></div>
+        <div class="card-body"><p style="font-size:14px;color:rgba(245,240,232,0.62);margin-bottom:14px;line-height:1.6;">Step-by-step F2P account progression. Real decisions, real results — no credit card required.</p><a href="/guides" class="btn-ghost">Watch the series</a></div>
+      </div>
+      <div class="card reveal">
+        <div class="card-header"><div class="card-title">R.A.I.D. Gear Formula</div><div class="card-badge">All Levels</div></div>
+        <div class="card-body"><p style="font-size:14px;color:rgba(245,240,232,0.62);margin-bottom:14px;line-height:1.6;">The signature gear framework — Role, Aim, Identify, Dial In. Stop guessing what gear to use.</p><a href="/guides" class="btn-ghost">Learn the formula</a></div>
+      </div>
+      <div class="card reveal">
+        <div class="card-header"><div class="card-title">Account Reviews</div><div class="card-badge">Community</div></div>
+        <div class="card-body"><p style="font-size:14px;color:rgba(245,240,232,0.62);margin-bottom:14px;line-height:1.6;">Real player accounts diagnosed and given a clear action plan. Learn by watching others.</p><a href="/guides" class="btn-ghost">Watch reviews</a></div>
+      </div>
+      <div class="card reveal">
+        <div class="card-header"><div class="card-title">Free Rewards & Codes</div><div class="card-badge">Evergreen</div></div>
+        <div class="card-body"><p style="font-size:14px;color:rgba(245,240,232,0.62);margin-bottom:14px;line-height:1.6;">Every active promo code and free reward in one place. Updated regularly. No strings attached.</p><a href="/codes" class="btn-ghost">Get free rewards</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- R.A.I.D. FRAMEWORK -->
+<section>
+  <div class="container">
+    <div class="section-label reveal">Signature Framework</div>
+    <h2 class="display reveal" style="font-size:clamp(26px,4vw,40px);">The R.A.I.D. Gear Formula</h2>
+    <p style="color:rgba(245,240,232,0.58);margin-top:10px;max-width:560px;" class="reveal">Stop guessing. Stop copying tier lists. Four steps. Every gear decision answered.</p>
+    <div class="raid-framework reveal">
+      <div class="framework-grid">
+        <div class="fw-step"><div class="fw-letter">R</div><div class="fw-word">Role</div><div class="fw-desc">What job does this champion do? Define the role first.</div></div>
+        <div class="fw-step"><div class="fw-letter">A</div><div class="fw-word">Aim</div><div class="fw-desc">What stat targets does this role need to function?</div></div>
+        <div class="fw-step"><div class="fw-letter">I</div><div class="fw-word">Identify</div><div class="fw-desc">Find vault gear that gets you closest to those targets.</div></div>
+        <div class="fw-step"><div class="fw-letter">D</div><div class="fw-word">Dial In</div><div class="fw-desc">Fine-tune with accessories and masteries. Test and repeat.</div></div>
+      </div>
+      <p style="margin-top:20px;font-size:13px;color:rgba(245,240,232,0.45);">Full series on YouTube → <a href="https://youtube.com/@RWDues" target="_blank" rel="noopener" style="color:var(--gold);">@RWDues</a></p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SUPPORTER CALLOUT -->
+<section style="padding: 60px 0;">
+  <div class="container">
+    <div class="section-label reveal">Support the Channel</div>
+    <h2 class="display reveal" style="font-size:clamp(26px,4vw,40px);">Get Your Name in the Videos</h2>
+    <p style="color:rgba(245,240,232,0.65);margin-top:10px;max-width:600px;line-height:1.8;" class="reveal">Ko-fi supporters get their name shouted out across YouTube videos, descriptions, end cards, and pinned comments — plus an exclusive Discord role. There's a monthly thank-you video posted to Ko-fi that's only available to people who've supported the channel.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:32px;">
+      <div class="reveal" style="border:1px solid rgba(212,175,55,0.35);border-radius:12px;padding:24px;background:rgba(212,175,55,0.05);">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;color:var(--gold);margin-bottom:10px;">MEMBERSHIP</div>
+        <div style="font-size:20px;font-weight:600;color:rgba(245,240,232,0.95);margin-bottom:14px;">Monthly Support</div>
+        <ul style="list-style:none;padding:0;margin:0;font-size:14px;color:rgba(245,240,232,0.65);line-height:2;">
+          <li>⚔ Shoutout in every video</li>
+          <li>⚔ Name in descriptions & end cards</li>
+          <li>⚔ Exclusive Discord supporter role</li>
+          <li>⚔ Monthly thank-you video (Ko-fi only)</li>
+        </ul>
+        <a href="https://ko-fi.com/rwduesgaming" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;margin-top:20px;">Become a Member</a>
+      </div>
+      <div class="reveal" style="border:1px solid rgba(220,20,60,0.35);border-radius:12px;padding:24px;background:rgba(220,20,60,0.05);">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;color:var(--crimson);margin-bottom:10px;">ONE-TIME</div>
+        <div style="font-size:20px;font-weight:600;color:rgba(245,240,232,0.95);margin-bottom:14px;">Single Support</div>
+        <ul style="list-style:none;padding:0;margin:0;font-size:14px;color:rgba(245,240,232,0.65);line-height:2;">
+          <li>⚔ Shoutout in select videos</li>
+          <li>⚔ Name in descriptions & end cards</li>
+          <li>⚔ Exclusive Discord supporter role</li>
+          <li>⚔ Monthly thank-you video (Ko-fi only)</li>
+        </ul>
+        <a href="https://ko-fi.com/rwduesgaming" target="_blank" rel="noopener" class="btn-secondary" style="display:inline-block;margin-top:20px;">Send a Support</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- LINKS -->
+<section>
+  <div class="container">
+    <div class="section-label reveal">Find Me Everywhere</div>
+    <h2 class="display reveal" style="font-size:clamp(26px,4vw,40px);">All Links</h2>
+    <div class="links-grid">
+      <a href="https://youtube.com/@RWDues" target="_blank" rel="noopener" class="link-card reveal"><div class="link-icon link-icon-crimson">▶</div><div><div class="link-name">YouTube</div><div class="link-url">youtube.com/@RWDues</div></div></a>
+      <a href="https://discord.gg/WJ3kC26Qg" target="_blank" rel="noopener" class="link-card reveal"><div class="link-icon link-icon-gold">💬</div><div><div class="link-name">Discord</div><div class="link-url">discord.gg/WJ3kC26Qg</div></div></a>
+      <a href="https://instagram.com/rwd_raid" target="_blank" rel="noopener" class="link-card reveal"><div class="link-icon link-icon-crimson">📸</div><div><div class="link-name">Instagram</div><div class="link-url">@rwd_raid</div></div></a>
+      <a href="https://tiktok.com/@rwdues" target="_blank" rel="noopener" class="link-card reveal"><div class="link-icon link-icon-gold">🎵</div><div><div class="link-name">TikTok</div><div class="link-url">@rwdues</div></div></a>
+      <a href="https://ko-fi.com/rwduesgaming" target="_blank" rel="noopener" class="link-card reveal"><div class="link-icon link-icon-crimson">☕</div><div><div class="link-name">Ko-fi</div><div class="link-url">Free F2P checklists & cheat sheets</div></div></a>
+      <a href="https://pl.go-ga.me/i3r4cwhd" target="_blank" rel="noopener" class="link-card reveal"><div class="link-icon link-icon-gold">🎁</div><div><div class="link-name">Free Champion</div><div class="link-url">Padraig referral — new players</div></div></a>
+    </div>
+    <div class="affiliate-bar reveal" style="margin-top:20px;">
+      <div><div class="affiliate-tag">Affiliate Partner</div><div class="affiliate-name">Dubby Energy</div><div class="affiliate-desc">Use code <strong style="color:var(--gold);">DUESENERGY</strong> at checkout.</div></div>
+      <div class="code-box"><div class="code-label">Discount Code</div><div class="code-value">DUESENERGY</div></div>
+      <a href="https://dubby.gg/discount/DUESENERGY?ref=xlgoyqsu" target="_blank" rel="noopener" class="btn-primary">Shop Dubby</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div><div class="footer-brand-name">⚔ Raiding With Dues</div><p class="footer-brand-tag">Real Raid Strategy · No Pay-to-Win Advice<br>United in Battle, United in Diversity<br>rwduestv.com</p></div>
+      <div><div class="footer-col-title">Content</div><ul class="footer-links"><li><a href="/guides">All Guides</a></li><li><a href="/guides">F2P Files</a></li><li><a href="/guides">R.A.I.D. Gear Formula</a></li><li><a href="/guides">Account Reviews</a></li></ul></div>
+      <div><div class="footer-col-title">Community</div><ul class="footer-links"><li><a href="/clan">UNG Cluster</a></li><li><a href="/contact">Join a Clan</a></li><li><a href="https://discord.gg/WJ3kC26Qg" target="_blank" rel="noopener">Discord</a></li></ul></div>
+      <div><div class="footer-col-title">Resources</div><ul class="footer-links"><li><a href="/codes">Free Codes</a></li><li><a href="https://ko-fi.com/rwduesgaming" target="_blank" rel="noopener">Ko-fi Cheat Sheets</a></li><li><a href="https://pl.go-ga.me/i3r4cwhd" target="_blank" rel="noopener">Free Champion</a></li><li><a href="/about">About Dues</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Raiding With Dues · rwduestv.com</div>
+      <div class="footer-tagline">Black · <span>Crimson</span> · <span>Gold</span></div>
+    </div>
+  </div>
+</footer>
+<script>
+const io = new IntersectionObserver(entries => { entries.forEach((e,i) => { if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'),i*60); io.unobserve(e.target); } }); },{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+window.addEventListener('load',()=>{ document.querySelectorAll('.reveal').forEach(el=>{ if(el.getBoundingClientRect().top<window.innerHeight) el.classList.add('visible'); }); });
+</script>
+</body>
+</html>

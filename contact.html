@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply to a Clan — Raiding With Dues</title>
+<meta name="description" content="Apply to join the 14-clan UNG Cluster in Raid: Shadow Legends. All levels welcome — fill out the form or reach out on Discord.">
+<link rel="canonical" href="https://rwduestv.com/contact">
+<style>
+/* ═══════════════════════════════════════════════════
+   RAIDING WITH DUES — Shared Site Stylesheet
+   Black #000000 · Crimson #DC143C · Gold #D4AF37
+   ═══════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ── TOKENS ── */
+:root {
+  --black:          #000000;
+  --surface1:       #0a0000;
+  --surface2:       #110000;
+  --surface3:       #1a0000;
+  --crimson:        #DC143C;
+  --dk-crimson:     #A41720;
+  --gold:           #D4AF37;
+  --soft-gold:      #D3AF37;
+  --white:          #F5F0E8;
+  --muted:          #888888;
+  --border:         rgba(212,175,55,0.2);
+  --border-strong:  rgba(212,175,55,0.5);
+  --radius:         8px;
+  --radius-lg:      12px;
+}
+
+/* ── RESET ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html  { scroll-behavior: smooth; }
+body  {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+a   { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+ul  { list-style: none; }
+
+/* ── TYPOGRAPHY ── */
+.display {
+  font-family: 'Cinzel', serif;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  color: var(--gold);
+}
+h1, h2, h3 { font-weight: 500; }
+
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.section-label::before,
+.section-label::after {
+  content: '';
+  height: 1px;
+  width: 32px;
+  background: var(--crimson);
+  opacity: 0.5;
+}
+
+/* ── LAYOUT ── */
+.container   { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+section      { padding: 80px 0; }
+.divider     {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(0,0,0,0.94);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+.nav-inner {
+  max-width: 1140px; margin: 0 auto; padding: 0 24px;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px;
+}
+.nav-brand {
+  font-family: 'Cinzel', serif;
+  font-weight: 900; font-size: 18px;
+  color: var(--gold); letter-spacing: 0.06em;
+  display: flex; align-items: center; gap: 8px;
+  flex-shrink: 0;
+}
+.nav-brand span { color: var(--crimson); }
+.nav-links {
+  display: flex; align-items: center; gap: 28px;
+}
+.nav-links a {
+  font-size: 12px; font-weight: 500;
+  letter-spacing: 0.07em; text-transform: uppercase;
+  color: rgba(245,240,232,0.65);
+  transition: color 0.2s;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--gold); }
+.nav-cta {
+  background: var(--crimson) !important;
+  color: var(--gold) !important;
+  padding: 8px 18px !important;
+  border-radius: var(--radius) !important;
+  border: 1px solid var(--dk-crimson) !important;
+  font-weight: 600 !important;
+  transition: background 0.2s !important;
+}
+.nav-cta:hover { background: var(--dk-crimson) !important; }
+
+/* ── PAGE HERO (inner pages) ── */
+.page-hero {
+  padding: 140px 0 72px;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 55% 60% at 80% 40%, rgba(220,20,60,0.07) 0%, transparent 65%),
+    radial-gradient(ellipse 35% 50% at 10% 90%, rgba(164,23,32,0.05) 0%, transparent 55%),
+    var(--black);
+}
+.page-hero-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(212,175,55,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,175,55,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.page-hero-inner { position: relative; z-index: 1; }
+.page-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--crimson);
+  background: rgba(220,20,60,0.08);
+  border: 1px solid rgba(220,20,60,0.25);
+  border-radius: 20px;
+  padding: 5px 14px;
+  margin-bottom: 20px;
+}
+.page-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 900;
+  font-size: clamp(32px, 5vw, 56px);
+  color: var(--gold);
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+.page-subtitle {
+  font-size: 17px;
+  color: rgba(245,240,232,0.6);
+  max-width: 580px;
+  line-height: 1.65;
+}
+
+/* ── BUTTONS ── */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--crimson);
+  color: var(--gold);
+  border: 1px solid var(--dk-crimson);
+  padding: 13px 26px;
+  border-radius: var(--radius);
+  font-weight: 600; font-size: 14px;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, transform 0.15s;
+  cursor: pointer;
+}
+.btn-primary:hover { background: var(--dk-crimson); transform: translateY(-1px); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--border-strong);
+  padding: 13px 26px;
+  border-radius: var(--radius);
+  font-weight: 500; font-size: 14px;
+  letter-spacing: 0.04em;
+  transition: background 0.2s, transform 0.15s;
+  cursor: pointer;
+}
+.btn-secondary:hover { background: rgba(212,175,55,0.07); transform: translateY(-1px); }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: transparent;
+  color: var(--crimson);
+  border: none; padding: 0;
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.btn-ghost::after { content: '→'; }
+.btn-ghost:hover { color: var(--gold); }
+
+/* ── CARDS ── */
+.card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.card:hover { border-color: var(--border-strong); transform: translateY(-2px); }
+.card-header {
+  background: var(--dk-crimson);
+  padding: 14px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.card-title  { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 700; color: var(--gold); }
+.card-badge  {
+  font-size: 10px; background: rgba(0,0,0,0.3);
+  color: var(--gold); border-radius: 20px;
+  padding: 3px 10px; letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.card-body   { padding: 22px; }
+
+/* ── PILL TAGS ── */
+.tag {
+  display: inline-flex; align-items: center;
+  font-size: 11px; font-weight: 500;
+  padding: 4px 12px; border-radius: 20px;
+  letter-spacing: 0.05em;
+}
+.tag-crimson {
+  background: rgba(220,20,60,0.12);
+  color: var(--crimson);
+  border: 1px solid rgba(220,20,60,0.3);
+}
+.tag-gold {
+  background: rgba(212,175,55,0.1);
+  color: var(--gold);
+  border: 1px solid rgba(212,175,55,0.3);
+}
+.tag-muted {
+  background: rgba(255,255,255,0.05);
+  color: var(--muted);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ── STAT BLOCKS ── */
+.stat-grid {
+  display: flex; gap: 40px;
+  border-top: 1px solid var(--border);
+  padding-top: 28px; margin-top: 28px;
+  flex-wrap: wrap;
+}
+.stat-num   { font-family: 'Cinzel', serif; font-size: 28px; font-weight: 700; color: var(--gold); }
+.stat-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
+
+/* ── LINK CARDS ── */
+.link-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  display: flex; align-items: center; gap: 14px;
+  transition: border-color 0.2s, transform 0.15s;
+}
+.link-card:hover { border-color: var(--border-strong); transform: translateY(-2px); }
+.link-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.link-icon-crimson { background: rgba(220,20,60,0.12); border: 1px solid rgba(220,20,60,0.25); }
+.link-icon-gold    { background: rgba(212,175,55,0.1);  border: 1px solid rgba(212,175,55,0.25); }
+.link-name { font-size: 14px; font-weight: 600; color: var(--gold); }
+.link-url  { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+/* ── AFFILIATE BAR ── */
+.affiliate-bar {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 26px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px; flex-wrap: wrap;
+}
+.affiliate-tag  { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--crimson); margin-bottom: 4px; font-weight: 600; }
+.affiliate-name { font-family: 'Cinzel', serif; font-size: 20px; color: var(--gold); font-weight: 700; }
+.affiliate-desc { font-size: 13px; color: rgba(245,240,232,0.6); margin-top: 4px; }
+.code-box {
+  background: var(--surface3);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 10px 20px; text-align: center;
+}
+.code-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+.code-value { font-family: 'Cinzel', serif; font-size: 18px; color: var(--gold); font-weight: 700; letter-spacing: 0.06em; margin-top: 2px; }
+
+/* ── TABLE ── */
+.rwd-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 14px;
+}
+.rwd-table th {
+  text-align: left; padding: 10px 16px;
+  font-size: 11px; font-weight: 600;
+  color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase;
+  border-bottom: 1px solid var(--border-strong);
+  background: var(--surface3);
+}
+.rwd-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  color: rgba(245,240,232,0.8);
+  vertical-align: middle;
+}
+.rwd-table tr:last-child td { border-bottom: none; }
+.rwd-table tr:hover td { background: rgba(212,175,55,0.03); }
+
+/* ── NOTICE / CALLOUT ── */
+.callout {
+  border-left: 3px solid var(--crimson);
+  background: rgba(220,20,60,0.06);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 16px 20px;
+  font-size: 14px;
+  color: rgba(245,240,232,0.75);
+  line-height: 1.6;
+}
+.callout strong { color: var(--gold); }
+.callout-gold {
+  border-left-color: var(--gold);
+  background: rgba(212,175,55,0.05);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--surface1);
+  border-top: 1px solid var(--border);
+  padding: 52px 0 28px;
+}
+.footer-top {
+  display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  gap: 40px; margin-bottom: 40px;
+}
+.footer-brand-name { font-family: 'Cinzel', serif; font-size: 18px; color: var(--gold); font-weight: 900; margin-bottom: 8px; }
+.footer-brand-tag  { font-size: 13px; color: rgba(245,240,232,0.45); line-height: 1.7; }
+.footer-col-title  { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--crimson); margin-bottom: 14px; }
+.footer-links      { display: flex; flex-direction: column; gap: 9px; }
+.footer-links a    { font-size: 13px; color: rgba(245,240,232,0.5); transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold); }
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 8px;
+}
+.footer-copy    { font-size: 12px; color: var(--muted); }
+.footer-tagline { font-size: 12px; color: var(--muted); }
+.footer-tagline span { color: var(--gold); }
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .nav-links  { display: none; }
+}
+@media (max-width: 640px) {
+  section           { padding: 56px 0; }
+  .page-hero        { padding: 120px 0 56px; }
+  .affiliate-bar    { flex-direction: column; text-align: center; }
+  .stat-grid        { gap: 24px; }
+  .footer-top       { grid-template-columns: 1fr; }
+}
+
+</style>
+<style>
+.contact-grid { display:grid; grid-template-columns:1fr 400px; gap:48px; align-items:start; margin-top:44px; }
+.apply-card { background:var(--surface2); border:1px solid var(--border-strong); border-radius:14px; overflow:hidden; }
+.apply-card-header { background:var(--dk-crimson); padding:20px 24px; }
+.apply-card-title { font-family:'Cinzel',serif; font-size:16px; font-weight:700; color:var(--gold); }
+.apply-card-sub { font-size:12px; color:rgba(212,175,55,0.65); margin-top:4px; }
+.apply-card-body { padding:24px; }
+.form-group { margin-bottom:18px; }
+.form-label { font-size:12px; font-weight:600; color:var(--gold); letter-spacing:0.06em; text-transform:uppercase; display:block; margin-bottom:7px; }
+.form-input {
+  width:100%; background:var(--surface3); border:1px solid var(--border);
+  border-radius:var(--radius); padding:11px 14px; color:var(--white);
+  font-family:'Inter',sans-serif; font-size:14px; outline:none;
+  transition:border-color 0.2s;
+}
+.form-input:focus { border-color:var(--gold); }
+.form-input::placeholder { color:var(--muted); }
+select.form-input option { background:var(--surface3); color:var(--white); }
+textarea.form-input { resize:vertical; min-height:100px; }
+.form-hint { font-size:11px; color:var(--muted); margin-top:5px; }
+.form-submit { width:100%; padding:14px; background:var(--crimson); border:1px solid var(--dk-crimson); border-radius:var(--radius); color:var(--gold); font-family:'Cinzel',serif; font-size:14px; font-weight:700; letter-spacing:0.06em; cursor:pointer; transition:background 0.2s; }
+.form-submit:hover { background:var(--dk-crimson); }
+.form-note { font-size:11px; color:var(--muted); text-align:center; margin-top:10px; line-height:1.5; }
+.contact-options { display:flex; flex-direction:column; gap:14px; }
+.contact-opt { background:var(--surface2); border:1px solid var(--border); border-radius:var(--radius-lg); padding:20px; display:flex; align-items:flex-start; gap:14px; transition:border-color 0.2s; }
+.contact-opt:hover { border-color:var(--border-strong); }
+.contact-opt-icon { width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
+.contact-opt-title { font-size:14px; font-weight:600; color:var(--gold); margin-bottom:4px; }
+.contact-opt-desc  { font-size:13px; color:rgba(245,240,232,0.58); line-height:1.5; margin-bottom:10px; }
+.success-msg { display:none; background:rgba(92,184,92,0.08); border:1px solid #5cb85c; border-radius:var(--radius); padding:16px; text-align:center; color:#5cb85c; font-size:14px; margin-top:14px; }
+@media(max-width:900px){ .contact-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">⚔ RWD<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="/guides">Guides</a></li>
+      <li><a href="/clan">Clan</a></li>
+      <li><a href="/codes">Free Codes</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact" class="active">Apply</a></li>
+      <li><a href="https://youtube.com/@RWDues" target="_blank" rel="noopener" class="nav-cta">▶ Watch</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="container page-hero-inner">
+    <div class="page-eyebrow">⚔ Join Up</div>
+    <h1 class="page-title">Apply to Join the UNG Cluster — Find Your Raid Clan</h1>
+    <p class="page-subtitle">All levels welcome. Fill out the form and we'll match you to the right clan in the UNG Cluster — or reach out directly on Discord.</p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- INTRO -->
+<section style="padding: 60px 0 20px;">
+  <div class="container">
+    <p style="color:rgba(245,240,232,0.75);max-width:680px;line-height:1.8;font-size:16px;margin-bottom:20px;">The UNG Cluster is a 14-clan community in Raid: Shadow Legends built for players who want a real, active home in the game — not just a clan to park an account in. Every level of player is welcome. Whether you're just starting out and looking for a supportive environment to learn in, or you're a seasoned player ready for a more competitive setting, there's a clan in the cluster that fits where you're at right now.</p>
+    <p style="color:rgba(245,240,232,0.75);max-width:680px;line-height:1.8;font-size:16px;margin-bottom:20px;">The UNG Cluster has a clan for every level of play — from players just starting out all the way to endgame. If you're not sure which clan fits you best, just say so on the form and the team will place you in the right spot based on your account and goals.</p>
+    <p style="color:rgba(245,240,232,0.75);max-width:680px;line-height:1.8;font-size:16px;">The fastest way to get sorted is always Discord — jump into the RWD server or the UNG Cluster server and someone from the team will get you squared away. The application form below works just as well and goes to the same people. Most applications get a response within 24–48 hours.</p>
+  </div>
+</section>
+
+<hr class="divider">
+
+<section>
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- APPLY FORM -->
+      <div class="apply-card reveal">
+        <div class="apply-card-header">
+          <div class="apply-card-title">Clan Application</div>
+          <div class="apply-card-sub">UNG Cluster · All 14 clans · All levels</div>
+        </div>
+        <div class="apply-card-body">
+          <div class="callout" style="margin-bottom:22px;">
+            <strong>Note:</strong> This form sends your info to the RWD team. We'll reach out via Discord — make sure your handle is correct. Most applications get a response within 24–48 hours.
+          </div>
+          <div class="form-group">
+            <label class="form-label">In-Game Name</label>
+            <input type="text" class="form-input" placeholder="Your Raid: Shadow Legends username" id="ign">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Discord Handle</label>
+            <input type="text" class="form-input" placeholder="username or username#0000" id="discord">
+            <div class="form-hint">We'll contact you here. Make sure it's accurate.</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Account Level / Stage Progress</label>
+            <select class="form-input" id="level">
+              <option value="" disabled selected>Select your level</option>
+              <option>Beginner — under Stage 15</option>
+              <option>Early-mid — Stage 15–20</option>
+              <option>Mid-game — Stage 20–25</option>
+              <option>Late-mid — Stage 25+, working on Dungeons</option>
+              <option>Endgame — Hydra / Pinball capable</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Clan Preference</label>
+            <select class="form-input" id="clan-pref">
+              <option value="" disabled selected>Which clan are you interested in?</option>
+              <option>Entry-level clan</option>
+              <option>UNG Cluster — place me where I fit best</option>
+              <option>Not sure — help me decide</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Anything Else?</label>
+            <textarea class="form-input" placeholder="Play style, goals, questions — optional but helpful" id="notes"></textarea>
+          </div>
+          <button class="form-submit" onclick="submitForm()">⚔ Submit Application</button>
+          <div class="form-note">Can't use the form? Reach out directly on Discord at <strong>discord.gg/WJ3kC26Qg</strong></div>
+          <div class="success-msg" id="success-msg">⚔ Application received! We'll reach out on Discord within 24–48 hours. Welcome to the family.</div>
+        </div>
+      </div>
+
+      <!-- CONTACT OPTIONS -->
+      <div class="contact-options">
+        <div class="contact-opt reveal">
+          <div class="contact-opt-icon link-icon-crimson" style="background:rgba(220,20,60,0.12);border:1px solid rgba(220,20,60,0.25);">💬</div>
+          <div>
+            <div class="contact-opt-title">Discord — Fastest Response</div>
+            <p class="contact-opt-desc">Jump straight into the RWD Discord and post in #clan-recruitment. Someone from the team will get you squared away.</p>
+            <a href="https://discord.gg/WJ3kC26Qg" target="_blank" rel="noopener" class="btn-primary" style="font-size:13px;padding:9px 18px;">Join RWD Discord</a>
+          </div>
+        </div>
+        <div class="contact-opt reveal">
+          <div class="contact-opt-icon link-icon-gold" style="background:rgba(212,175,55,0.1);border:1px solid rgba(212,175,55,0.25);">🌐</div>
+          <div>
+            <div class="contact-opt-title">UNG Cluster Discord</div>
+            <p class="contact-opt-desc">Looking for a specific clan in the cluster, or want to see all 14 options? The UNG Discord is the place to browse and apply.</p>
+            <a href="https://discord.gg/359gbKEvC" target="_blank" rel="noopener" class="btn-secondary" style="font-size:13px;padding:9px 18px;">UNG Cluster Discord</a>
+          </div>
+        </div>
+        <div class="contact-opt reveal">
+          <div class="contact-opt-icon link-icon-crimson" style="background:rgba(220,20,60,0.12);border:1px solid rgba(220,20,60,0.25);">✉</div>
+          <div>
+            <div class="contact-opt-title">Business Email</div>
+            <p class="contact-opt-desc">For sponsorships, collaborations, or anything business-related — email is the right channel.</p>
+            <a href="mailto:rwdues.gaming@gmail.com" class="btn-ghost" style="font-size:13px;">rwdues.gaming@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-opt reveal">
+          <div class="contact-opt-icon link-icon-gold" style="background:rgba(212,175,55,0.1);border:1px solid rgba(212,175,55,0.25);">▶</div>
+          <div>
+            <div class="contact-opt-title">YouTube Community Tab</div>
+            <p class="contact-opt-desc">Active promo codes, poll questions, and community updates live here first. Worth a follow.</p>
+            <a href="https://youtube.com/@RWDues" target="_blank" rel="noopener" class="btn-ghost" style="font-size:13px;">@RWDues</a>
+          </div>
+        </div>
+        <div class="callout callout-gold reveal">
+          <strong>Response time:</strong> Discord is the fastest — usually same day. The application form above goes to the same team. Email takes 2–3 business days.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div><div class="footer-brand-name">⚔ Raiding With Dues</div><p class="footer-brand-tag">Real Raid Strategy · No Pay-to-Win Advice<br>United in Battle, United in Diversity<br>rwduestv.com</p></div>
+      <div><div class="footer-col-title">Content</div><ul class="footer-links"><li><a href="/guides">All Guides</a></li><li><a href="/guides">F2P Files</a></li><li><a href="/guides">R.A.I.D. Gear Formula</a></li><li><a href="/guides">Account Reviews</a></li></ul></div>
+      <div><div class="footer-col-title">Community</div><ul class="footer-links"><li><a href="/clan">UNG Cluster</a></li><li><a href="/contact">Join a Clan</a></li><li><a href="https://discord.gg/WJ3kC26Qg" target="_blank" rel="noopener">Discord</a></li></ul></div>
+      <div><div class="footer-col-title">Resources</div><ul class="footer-links"><li><a href="/codes">Free Codes</a></li><li><a href="https://ko-fi.com/rwduesgaming" target="_blank" rel="noopener">Ko-fi Cheat Sheets</a></li><li><a href="https://pl.go-ga.me/i3r4cwhd" target="_blank" rel="noopener">Free Champion</a></li><li><a href="/about">About Dues</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><div class="footer-copy">© 2026 Raiding With Dues · rwduestv.com</div><div class="footer-tagline">Black · <span>Crimson</span> · <span>Gold</span></div></div>
+  </div>
+</footer>
+<script>
+function submitForm() {
+  const ign = document.getElementById('ign').value.trim();
+  const discord = document.getElementById('discord').value.trim();
+  const level = document.getElementById('level').value;
+  const pref = document.getElementById('clan-pref').value;
+  if (!ign || !discord || !level || !pref) {
+    alert('Please fill out all required fields before submitting.');
+    return;
+  }
+  // Build Discord-formatted message for clipboard
+  const msg = `**UNG Clan Application**\n**IGN:** ${ign}\n**Discord:** ${discord}\n**Level:** ${level}\n**Clan Preference:** ${pref}\n**Notes:** ${document.getElementById('notes').value.trim() || 'None'}`;
+  const ta = document.createElement('textarea');
+  ta.value = msg; ta.style.cssText='position:fixed;opacity:0;';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try { document.execCommand('copy'); } catch(e){}
+  ta.remove();
+  document.getElementById('success-msg').style.display = 'block';
+  document.querySelector('.form-submit').disabled = true;
+  document.querySelector('.form-submit').textContent = 'Submitted ✓';
+}
+const io=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*60);io.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+window.addEventListener('load',()=>{document.querySelectorAll('.reveal').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight)el.classList.add('visible');});});
+</script>
+</body>
+</html>
